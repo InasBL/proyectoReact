@@ -1,64 +1,59 @@
 import React from "react";
 import './Form.css'
+import { useState } from "react";
 
 
-class Form extends React.Component {
- envioForumulario =(event)=>{
-    //Permite que no se recarge entera la pagina.
-    event.preventDefault();
-    const form=event.target;
-    this.props.agregarIncidencia(form.id_incidencia.value, form.usuario.value, form.titulo.value,
-        form.descripcion.value, form.categoria.value,form.urgencia.value, form.ubicacion.value);
- }
+function Form(props) {
+    const envioForumulario = (event) => {
+        //Permite que no se recarge entera la pagina.
+        event.preventDefault();
+        const form = event.target;
+        props.agregarIncidencia(form.id_incidencia.value, form.usuario.value, form.titulo.value,
+            form.descripcion.value, form.categoria.value, form.urgencia.value, form.ubicacion.value);
+    }
+    return (
+        <div>
+            <h2>Registrar incidencias</h2>
+            <form onSubmit={envioForumulario}>
 
-    render() {
-        return (
-            <div>
-                <h2>Registrar incidencias</h2>
-                <form onSubmit={this.envioForumulario}>
+                <div>
+                    <label className="mb-3 form-label">Titulo Incidencia</label>
+                    <input className="mb-3 form-control" type="text" nmae="titulo" placeholder="Introduce el titulo" required></input><br></br>
+                </div>
 
-                    <div className="elemento-form">
-                        <label> Id Incidencia </label>
-                        <input type="text" name="id_incidencia" placebolder="Ej:  1,2,3..." required />
-                    </div>
+                <div>
+                    <label className="mb-3 form-label">Usuario</label>
+                    <input className="mb-3 form-control" type="text" nmae="usuario" placeholder="Introduce el titulo" required></input><br></br>
+                </div>
 
-                    <div className="elemento-form">
-                        <label> Titulo </label>
-                        <input type="text" name="titulo" placebolder="Ej:  No funciona raton del ordenador" required />
-                    </div>
 
-                    <div className="elemento-form">
-                        <label> Usuario </label>
-                        <input type="text" name="usuario" placebolder="Ej:  1e78234989234" required />
-                    </div>
+                <div>
+                    <label className="mb-3 form-label"> Descripcion </label>
+                    <input className="mb-3 form-control" type="text" name="descripcion" required />
+                </div>
 
-                    <div className="elemento-form">
-                        <label> Descripcion </label>
-                        <input type="text" name="descripcion" required />
-                    </div>
+                <div>
+                    <label className="mb-3 form-label"> Categoria </label>
+                    <select className="mb-3 form-control" type="text" name="categoria" required>
+                        <option value="">Seleccionar...</option>
+                        <option>Hardware</option>
+                        <option>Software</option>
+                        <option>red y accesos</option>
+                        <option>Infraestructura</option>
+                    </select>
+                </div>
 
-                    <div className="elemento-form">
-                        <label> Categoria </label>
-                        <select type="text" name="categoria" required>
-                            <option value="">Seleccionar...</option>
-                            <option>Hardware</option>
-                            <option>Software</option>
-                            <option>red y accesos</option>
-                            <option>Infraestructura</option>
-                        </select>
-                    </div>
+                <div>
+                    <label className="mb-3 form-label"> Nivel de urgencia </label>
+                    <select className="mb-3 form-control" type="text" name="urgencia" required>
+                        <option value="">Seleccionar...</option>
+                        <option>Alta</option>
+                        <option>Media</option>
+                        <option>Baja</option>
+                    </select>
+                </div>
 
-                    <div className="elemento-form">
-                        <label> Nivel de urgencia </label>
-                        <select type="text" name="urgencia" required>
-                            <option value="">Seleccionar...</option>
-                            <option>Alta</option>
-                            <option>Media</option>
-                            <option>Baja</option>
-                        </select>
-                    </div>
-
-                     {/* <div className="elemento-form">
+                {/* <div className="elemento-form">
                         <label>Fecha registro </label>
                         <input type="text" name="fecha" required />
                     </div>
@@ -74,18 +69,17 @@ class Form extends React.Component {
                         </select>
                     </div> */}
 
-                     <div className="elemento-form">
-                        <label>Ubicacion</label>
-                        <input type="text" name="ubicacion" required />
-                    </div>
+                <div>
+                    <label className="mb-3 form-label">Ubicacion</label>
+                    <input className="mb-3 form-control" type="text" name="ubicacion" required />
+                </div>
 
-                    <div className="elemento-form-boton">
-                        <button>Registrar</button>
-                    </div>
-                </form>
-            </div>
-        )
-    }
+                <div>
+                    <button type="submit" className="btn  btn-success mx-auto d.grid ">Registrar</button>
+                </div>
+            </form>
+        </div>
+    )
 }
 
 export default Form;
