@@ -1,18 +1,18 @@
-import './App.css';
 import MiLista from '../Lista/MiLista.js';
 import React from 'react';
 import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
 import Form from '../Form/Form.js';
-
+import {useState} from "react";
+import Fondo from '../img/fondo.webp';
+import 'bootstrap'
 //Ahora App es el que tiene la informacion no Lista
 
 
 
 //Pasa de una funcion a una clase.
-class App extends React.Component {
-  state = {
-    incidencias: [
+function App() {
+    const[incidencias, setIncidencia]= useState([
       {
         id_incidencia: 1,
         id_usuario: 'e768590345h',
@@ -46,10 +46,9 @@ class App extends React.Component {
         estado: "Resuelta",
         ubicacion: "Sala de profesores"
       }
-    ]
-  };
+    ])
 
-  agregarIncidencia = (id_nuevo, usuario_nuevo, titulo_nuevo, descripcion_nuevo, categoria_nuevo,
+  const agregarIncidencia = (id_nuevo, usuario_nuevo, titulo_nuevo, descripcion_nuevo, categoria_nuevo,
     nivel_urgencia_nuevo, ubicacion_nuevo
   ) => {
     const fecha = new Date();
@@ -59,7 +58,7 @@ class App extends React.Component {
     const fechaFormateada = `${year}-${month}-${date}`;
 
     const nueva_incidencia = {
-      id_incidencia: this.state.incidencias.length + 1,
+      id_incidencia: incidencias.length + 1,
       id_usuario: usuario_nuevo,
       titulo: titulo_nuevo,
       descripcion: descripcion_nuevo,
@@ -69,29 +68,28 @@ class App extends React.Component {
       estado: "Abierta",
       ubicacion: ubicacion_nuevo
     }
-    this.setState({ incidencias: [...this.state.incidencias, nueva_incidencia] });
+    this.setState({ incidencias: [...incidencias, nueva_incidencia] });
     console.log("Nueva incidencia: ", nueva_incidencia);
 
   }
 
-  render() {
     return (
-      <>
+      <div className="card" style={{background:`url(${Fondo})`,backgroundSize:"cover", backgroundRepeat:"no-repeat"}}>
         <Header />
-        <h2>Mi aplicación</h2>
-        <div className="contenidos-incidencias">
-          <main>
+        <h2 className='mb-4 text-center'>Mi aplicación</h2>
+        <div className="container-fluid mt-4 row">
+          <main className='col-md-6'>
             <p>Esta aplicacion muestra el contenido almacenado de mi app:</p>
-            <MiLista incidencias={this.state.incidencias} />
+            <MiLista incidencias={incidencias} />
           </main>
-          <aside>
-            <Form agregarIncidencia={this.agregarIncidencia} />
+          <aside className='col-md-6'>
+            <Form agregarIncidencia={agregarIncidencia} />
           </aside>
         </div>
         <Footer />
-      </>
+      </div>
     );
   }
-}
+
 export default App;
 
