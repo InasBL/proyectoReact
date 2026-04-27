@@ -151,6 +151,7 @@ function App() {
             </main>
             <aside className="col-md-6">
               <Form agregarIncidencia={agregarIncidencia} />
+              <button onClick={logout}>Cerrar sesión</button>
             </aside>
           </div>
           <Footer />
