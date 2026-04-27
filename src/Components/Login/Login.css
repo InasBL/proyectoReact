@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Script&display=swap");
+.contenedorLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(1deg, #ffe6f7, #ffffff);
+}
+
+.formularioLogin {
+  background: white;
+  padding: 50px;
+  border-radius: 12px;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.tituloLogin {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 50px;
+  font-weight: bold;
+  color: hsl(301, 100%, 92%);
+  font-family: "Great Vibes", cursive;
+}
+
+.etiquetaLogin {
+  font-size: 20px;
+  font-family: "League Script", cursive;
+  color: #454545;
+}
+
+.campoLogin {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  color: #000000;
+}
+
+.campoLogin:focus {
+  border-color: hsl(301, 100%, 92%);
+  box-shadow: 0 0 5px hsl(301, 100%, 92%);
+}
+
+.botonLogin {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: hsl(301, 100%, 92%);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.botonLogin:hover {
+  background: #ffffff;
+  color: hsl(301, 100%, 92%);
+}
