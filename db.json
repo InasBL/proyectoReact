@@ -2,8 +2,78 @@
   "users": [
     {
       "id": 1,
-      "email": "admin@email.com",
-      "password": "$2a$10$n9h2O7z/y9TDZVrzO4d8Q.6B/BmqBOUmrsk/DEkxcE5rWBqicN65."
+      "email": "admin@gmail.com",
+      "password": "$2a$10$19Wn6BCKFNkpMRgxDZQnbevct1eF4bkxnuJvSC0aA27O/fjKQu9GC",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "email": "inas@gmail.com",
+      "password": "$2a$10$E6jVO8mgXO9ANMYZNE3zLOxwlCTpeYFraJzCNRH3LroerqN3PbLTi",
+      "role": "admin"
+    },
+    {
+      "email": "claudia@gmail.com",
+      "password": "$2a$10$G7UsI0gliIJtNc4wp7Fi../9AU2r/qIPxBanGTtcyI0YwfcNMsQU.",
+      "role": "admin",
+      "id": 3
+    }
+  ],
+  "incidencias": [
+    {
+      "id_usuario": "admin@gmail.com",
+      "titulo": "Proyector averiado en aula 2",
+      "descripcion": "El proyector no enciende y la lámpara parece dañada.",
+      "categoria": "Hardware",
+      "nivel_urgencia": "Alta",
+      "fecha_registro": "2025-10-03",
+      "estado": "Cerrada",
+      "ubicacion": "A301",
+      "id": 1
+    },
+    {
+      "id_usuario": "admin@gmail.com",
+      "titulo": "Ordenador de secretaría no enciende",
+      "descripcion": "El equipo no responde al presionar el botón de encendido.",
+      "categoria": "Hardware",
+      "nivel_urgencia": "Media",
+      "fecha_registro": "2025-10-02",
+      "estado": "En proceso",
+      "ubicacion": "8205",
+      "id": 2
+    },
+    {
+      "id_usuario": "admin@gmail.com",
+      "titulo": "Impresora sin conexión",
+      "descripcion": "La impresora de la sala de profesores no aparece en red.",
+      "categoria": "Red/Impresión",
+      "nivel_urgencia": "Alta",
+      "fecha_registro": "2025-10-01",
+      "estado": "Resuelta",
+      "ubicacion": "Sala de profesores",
+      "id": 3
+    },
+    {
+      "id_usuario": "inas@gmail.com",
+      "titulo": "Incidencia registrada",
+      "descripcion": "Hola buenas tardes hemos notado los siguentes problemasHola buenas tardes hemos notado los siguentes problemasHola buenas tardes hemos notado los siguentes problemasHola buenas tardes hemos notado los siguentes problemasHola buenas tardes hemos notado los siguentes problemasHola buenas tardes hemos notado los siguentes problemasHola buenas tardes hemos notado los siguentes problemas",
+      "categoria": "Software",
+      "nivel_urgencia": "Media",
+      "fecha_registro": "2026-05-16",
+      "estado": "Abierta",
+      "ubicacion": "h",
+      "id": 4
+    },
+    {
+      "id_usuario": "admin@gmail.com",
+      "titulo": "fvgbhnjlkm",
+      "descripcion": "vjbnkm,",
+      "categoria": "Hardware",
+      "nivel_urgencia": "Alta",
+      "fecha_registro": "2026-05-16",
+      "estado": "Abierta",
+      "ubicacion": "m",
+      "id": 5
     }
   ]
 }
